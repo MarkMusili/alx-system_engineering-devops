@@ -2,15 +2,19 @@
 # Display lines from 1 to 20 with strings in between
 i=1
 while [ $i -le 20 ]; do
-	if [ $i -eq 5 ]; then
-		echo "bad luck from China"
-	elif [ $i -eq 10 ]; then
-		echo "bad luck from Japan"
-	elif [ $i -eq 18 ]; then
-		echo "bad luck from Italy"
-	else
-		echo "$i"
-	fi
+	case $i in
+		5) 
+			echo "bad luck from China"
+			;;
+		10)
+			echo "bad luck from Japan"
+			;;
+		18)
+			echo "bad luck from Italy"
+			;;
+		*)
+			echo "$i"
+			;;
+	esac
 	((i++))
-
 done
