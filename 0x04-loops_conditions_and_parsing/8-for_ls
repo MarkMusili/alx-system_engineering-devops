@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Display current directory files
+for file in $(find . -type f -name "[!.]*" -exec basename {} \; | cut -d "-" -f 2-); do
+	echo "$file"
+done
