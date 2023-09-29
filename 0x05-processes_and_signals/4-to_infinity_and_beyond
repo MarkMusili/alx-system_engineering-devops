@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Display the words "To infinity and beyond" indefinitley
+infinite=1
+while [ $infinite -eq 1 ]; do
+	echo "To infinity and beyond"
+	sleep 2
+done
