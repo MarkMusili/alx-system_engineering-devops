@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Kill the 4-to_infinity_and_beyond process
+# shellcheck disable=SC2009
+ps aux | grep "4-to_infinity_and_beyond" | awk '{print $2}' | xargs kill 2>/dev/null 
