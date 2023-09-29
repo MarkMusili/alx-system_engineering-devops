@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Find the PID of bash without using ps
+for pid in /proc/*/; do
+    if [ -d "$pid" ]; then
+        pid_num=$(basename "$pid")
+        cmd_file="$pid/cmdline"
+        if [ -e "$cmd_file" ]; then
+            cmd_line=$(tr '\0' ' ' < "$cmd_file")
+            if [[ "$cmd_line" == *"bash"* ]]; then
+                echo "$pid_num bash"
+            fi
+        fi
+    fi
+done
