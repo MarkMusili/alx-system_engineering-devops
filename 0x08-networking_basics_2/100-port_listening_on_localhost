@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Try to listen from port 98
+sudo nc -l -p 98
