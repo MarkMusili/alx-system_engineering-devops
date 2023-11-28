@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Update package list
+sudo apt-get update
+
+# Install Nginx
+sudo apt -y install nginx
+
+# Start Nginx
+sudo service nginx start
+
+# Create a simple HTML page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Configure Nginx
+sudo sed -i 's/80 default_server;/80 default_server;\n
+ 
+# Reload Nginx
+sudo service ngix reload
