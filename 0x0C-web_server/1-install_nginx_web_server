@@ -17,4 +17,4 @@ echo "Hello World!" | sudo tee /var/www/html/index.html
 sudo sed -i 's/80 default_server;/80 default_server;\n'
  
 # Reload Nginx
-sudo service ngix reload
+sudo service nginx reload
