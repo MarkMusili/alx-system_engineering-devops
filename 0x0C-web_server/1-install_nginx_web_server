@@ -14,7 +14,14 @@ sudo service nginx start
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
 # Configure Nginx
-sudo sed -i 's/80 default_server;/80 default_server;\n'
+printf %s "server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+}
+" > /etc/nginx/sites-available/default
  
 # Reload Nginx
 sudo service nginx reload
