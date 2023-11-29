@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Found the error and fixed with this the server was down
+service apache2 start
