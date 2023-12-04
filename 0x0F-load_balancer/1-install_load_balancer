@@ -18,5 +18,7 @@ backend myservers
 	server web-02 3.90.85.11:80
 " | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
 
+sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
+
 # Reload the server
 sudo service haproxy reload
