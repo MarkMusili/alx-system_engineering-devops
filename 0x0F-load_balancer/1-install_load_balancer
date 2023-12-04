@@ -3,6 +3,8 @@
 sudo apt-get update
 
 # Install haproxy
+sudo apt-get install --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.8
 sudo apt install -y haproxy=2.8.\*
 
 #Configure the config file
