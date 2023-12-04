@@ -1,0 +1,19 @@
+# Update package list
+sudo apt-get update
+
+# Install haproxy
+sudo apt install -y haproxy
+
+#Configure the config file
+printf '%s\n' "frontend web
+	bind *:80
+	default_backend myservers
+
+backend myservers
+	balance roundrobin
+	server web-01 3.84.158.65:80
+	server web-02 3.90.85.11:80
+" | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
+
+# Reload the server
+sudo service haproxy reload
