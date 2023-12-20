@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Create a back up for mysql
+
+if [ -n "$1" ]; then
+	mysql_pwd="-p$1"
+fi
+
+current_date=$(date +"%d-%m-%Y")
+
+sudo mysqldump -u root $mysql_pwd --all-databases > backup.sql
+tar -czvf "$current_date.tar.gz" backup.sql
+
+rm backup.sql
