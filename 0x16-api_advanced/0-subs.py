@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Module to query the Reddit API 
-and returns the number of subscribers 
+"""Module to query the Reddit API
+and returns the number of subscribers
 or 0 if an invalid subreddit is given."""
 import requests
+
 
 def number_of_subscribers(subreddit):
     """Return the number of subscribers"""
