@@ -7,9 +7,9 @@ import requests
 def recurse(subreddit, hot_list=[], after=None):
     """The function"""
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {"User-Agent": "My-User-Agent"}
+    hd = {"User-Agent": "My-User-Agent"}
     params = {"after": after}
-    r = requests.get(url, headers=headers, params=params, allow_redirects=False)
+    r = requests.get(url, headers=hd, params=params, allow_redirects=False)
     if r.status_code == 200:
         data = r.json().get("data")
         if data:
