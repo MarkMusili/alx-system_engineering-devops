@@ -2,3 +2,4 @@
 # Change the port number from 8080 to 80 in your Nginx configuration file
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo sevice nginx restart
