@@ -1,4 +1,4 @@
-#!/usr/bin/ env bash
+#!/usr/bin/env bash
 # Fix the nginx server
 sed -i 's/8080/80/g' /etc/nginx/sites-available/default
 sed -i 's/user www-data/user nginx/g' /etc/nginx/nginx.conf
